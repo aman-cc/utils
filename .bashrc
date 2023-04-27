@@ -27,7 +27,9 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias l='ls -lh' # long listing format
-alias ll='ls -lah' # long listing format
+alias ll='ls -lah' # long listing format including hidden files
+alias dirspace='du --human-readable --max-depth=1 | sort --human-numeric-sort -r' # List files/folders in current directory by decreasing space
+alias gst='git status --short'
 
 # Count all files (recursively) in the current folder
 alias countfiles="for t in files links directories; do echo \`find . -type \${t:0:1} | wc -l\` \$t; done 2> /dev/null"
