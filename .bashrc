@@ -10,10 +10,17 @@ elif [ -f /etc/bash_completion ]; then
 fi
 
 # make tab cycle through commands after listing
+bind 'TAB:menu-complete'
 bind '"\t":menu-complete'
 bind "set show-all-if-ambiguous on"
 bind "set completion-ignore-case on"
 bind "set menu-complete-display-prefix on"
+bind '"\e[Z": menu-complete-backward'
+bind "set completion-display-width 1"
+
+# Cycle through history based on characters already typed on the line
+bind '"\e[A":history-search-backward'
+bind '"\e[B":history-search-forward'
 
 # Bash completion case-insensitive
 # If ~/.inputrc doesn't exist yet: First include the original /etc/inputrc
