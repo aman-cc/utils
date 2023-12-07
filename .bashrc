@@ -37,6 +37,8 @@ alias l='ls -lh' # long listing format
 alias ll='ls -lah' # long listing format including hidden files
 alias dirspace='du --human-readable --max-depth=1 | sort --human-numeric-sort -r' # List files/folders in current directory by decreasing space
 alias gst='git status --short'
+alias ga='git add'
+alias vim='nvim'
 
 # Count all files (recursively) in the current folder
 alias countfiles="for t in files links directories; do echo \`find . -type \${t:0:1} | wc -l\` \$t; done 2> /dev/null"
@@ -56,3 +58,7 @@ alias mkgz='tar -cvzf'
 alias untar='tar -xvf'
 alias unbz2='tar -xvjf'
 alias ungz='tar -xvzf'
+
+export LC_ALL=C.UTF-8
+export LANG=C.UTF-8 
+
