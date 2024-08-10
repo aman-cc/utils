@@ -37,6 +37,7 @@ alias l='ls -lh' # long listing format
 alias ll='ls -lah' # long listing format including hidden files
 alias dirspace='du --human-readable --max-depth=1 | sort --human-numeric-sort -r' # List files/folders in current directory by decreasing space
 alias gst='git status --short'
+alias gc='git checkout'
 alias ga='git add'
 alias vim='nvim'
 
@@ -60,5 +61,6 @@ alias unbz2='tar -xvjf'
 alias ungz='tar -xvzf'
 
 export LC_ALL=C.UTF-8
-export LANG=C.UTF-8 
-
+export LANG=C.UTF-8
+export VISUAL=vim
+export EDITOR="$VISUAL"
