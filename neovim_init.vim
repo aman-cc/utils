@@ -18,6 +18,7 @@ call plug#end()
 let g:deoplete#enable_at_startup = 1
 
 set clipboard+=unnamedplus
+xnoremap p pgvy
 set number
 set shiftwidth=4
 syntax enable
