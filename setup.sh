@@ -22,7 +22,7 @@ cp neovim_init.vim ~/.config/nvim/init.vim
 # Set base python environment
 cd ~
 python3 -m venv .venv
-~/.venv/bin/python -m pip install -U pip pynvim ruff numpy opencv-python pillow
+~/.venv/bin/python -m pip install -U pip pynvim ruff numpy opencv-python pillow typing_extensions
 
 # Install plugs
 nvim --headless +PlugInstall +qall
