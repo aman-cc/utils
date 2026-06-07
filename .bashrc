@@ -9,25 +9,21 @@ elif [ -f /etc/bash_completion ]; then
 	. /etc/bash_completion
 fi
 
-# make tab cycle through commands after listing
-bind 'TAB:menu-complete'
-bind '"\t":menu-complete'
-bind "set show-all-if-ambiguous on"
-bind "set completion-ignore-case on"
-bind "set menu-complete-display-prefix on"
-bind '"\e[Z": menu-complete-backward'
-bind "set completion-display-width 1"
+# Interactive-shell-only key bindings (bind errors out in non-interactive shells)
+if [[ $- == *i* ]]; then
+	# make tab cycle through commands after listing
+	bind 'TAB:menu-complete'
+	bind '"\t":menu-complete'
+	bind "set show-all-if-ambiguous on"
+	bind "set completion-ignore-case on"
+	bind "set menu-complete-display-prefix on"
+	bind '"\e[Z": menu-complete-backward'
+	bind "set completion-display-width 1"
 
-# Cycle through history based on characters already typed on the line
-bind '"\e[A":history-search-backward'
-bind '"\e[B":history-search-forward'
-
-# Bash completion case-insensitive
-# If ~/.inputrc doesn't exist yet: First include the original /etc/inputrc
-# so it won't get overriden
-if [ ! -a ~/.inputrc ]; then echo '$include /etc/inputrc' > ~/.inputrc; fi
-# Add shell-option to ~/.inputrc to enable case-insensitive tab completion
-echo 'set completion-ignore-case On' >> ~/.inputrc
+	# Cycle through history based on characters already typed on the line
+	bind '"\e[A":history-search-backward'
+	bind '"\e[B":history-search-forward'
+fi
 
 alias ..='cd ..'
 alias ...='cd ../..'
